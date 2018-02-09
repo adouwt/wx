@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="btn-area">
+    <view bind:tap="chooseImage">找图片</view>
+    <view bind:tap="scanCode">用相机</view>
+  </view>
+</view>
