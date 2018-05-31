@@ -47,7 +47,7 @@ Page({
     })
   },
   onLoad: function () {
-   this.data.count = 0;
+    this.data.count = 0;
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -83,6 +83,7 @@ Page({
     })
   },
   addCount:function(){
+    // console.log(this, '点击时候的this 指向的是page')
     this.setData({
       count: this.data.count+1
     })
@@ -144,12 +145,21 @@ Page({
     console.log('checkbox发生change事件，携带value值为：', e.detail.value)
   },
   postData:function(){
-    network.postData(handelApi('/doCinemaSubmit'), 
-    {"cinemaName": '小程序测试'}, 
+    var _this = this
+    network.postData(handelApi('/laocaibaoVesionService/Api/touchRequest'), 
+    {"method": '800011', 'pageNo': 1, "pageSize": 15}, 
     '正在加载数据', 
     function (res) {
     //res就是我们请求接口返回的数据
-      console.log(res)
+      console.log(res.msgEx.infos.banner)
+      // console.log(_this, 'weixin de this')
+      _this.setData({
+        imgUrl: res.msgEx.infos.banner.banner,
+        publishMan: res.msgEx.infos.banner.publishMan,
+        infoSource: res.msgEx.infos.banner.infoSource,
+        summary: res.msgEx.infos.banner.summary,
+        viewNum: res.msgEx.infos.banner.viewNum
+      })
     }, function () {
       wx.showToast({
         title: '加载数据失败',

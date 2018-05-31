@@ -19,3 +19,15 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.news-list {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  margin-left: 20px;
+}
+.news-list image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20px;
+}
