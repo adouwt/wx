@@ -7,6 +7,9 @@
 // message:进度条的提示信息
 // success:成功的回调函数
 // fail：失败的回调
+// 基本的url
+const defaultApi = require("../config.js");
+
 function postData(url, params, message, success, fail) {
   console.log(params)
   wx.showNavigationBarLoading()
@@ -16,7 +19,7 @@ function postData(url, params, message, success, fail) {
     })
   }
   wx.request({
-    url: url,
+    url: defaultApi.defaultApiAddress + url,
     data: params,
     header: {
       //'Content-Type': 'application/json'
@@ -51,7 +54,7 @@ function postData(url, params, message, success, fail) {
 
 function getData(url, params,  message, success, fail) {
   wx.request({
-    url: url,
+    url: defaultApi.defaultApiAddress + url,
     data: params,
     header: {
       // 'Content-Type': 'application/json'
