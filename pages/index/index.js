@@ -4,15 +4,15 @@ const app = getApp();
 const network = require("../../utils/api.js");
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    array: [{
-      message: 'foo',
-    }, {
-      message: 'bar'
-    }]
+    defaultSize: 'default',
+    primarySize: 'default',
+    warnSize: 'default',
+    disabled: true,
+    plain: false,
+    loading: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -24,7 +24,8 @@ Page({
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+        disabled: false
       })
     } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -32,7 +33,8 @@ Page({
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
+          hasUserInfo: true,
+          disabled: false
         })
       }
     } else {
@@ -42,7 +44,8 @@ Page({
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
-            hasUserInfo: true
+            hasUserInfo: true,
+            disabled: false
           })
         }
       })
@@ -57,7 +60,6 @@ Page({
   },
   postData:function(){
     var _this = this
-    console.log(this.data.userInfo, '11111')
     network.postData('/post/wexinSignIn', 
     this.data.userInfo, 
     '正在加载数据', 
@@ -65,6 +67,8 @@ Page({
       console.log(res)
       wx.showToast({
         title: res.message,
+        icon: 'fail',
+        duration: 1000
       })
     }, function () {
       wx.showToast({

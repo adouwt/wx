@@ -2,31 +2,20 @@
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
+    <view wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view>{{count}}</view>
-  <view bind:tap="addCount">click me</view>
-  <view bind:tap="postData">post 获得数据</view>
-  <view wx:if="{{imgUrl}}" class="news-list">
-    <text><image class="" src="{{imgUrl}}" background-size="cover"></image></text>
-  </view>
-   <view wx:if="{{imgUrl}}" class="news-list">
-    <text>发布人：{{publishMan}}</text>
-  </view> 
-  <view wx:if="{{imgUrl}}" class="news-list">
-    <text>信息：{{infoSource}}</text>
-  </view> 
-  <view wx:if="{{imgUrl}}" class="news-list">
-    <text>概要：{{summary}}</text>
-  </view>
-  <view wx:if="{{imgUrl}}" class="news-list">
-    <text>浏览量：{{viewNum}}</text>
-  </view>
-  <view bind:tap="getData">get 获得数据</view>
-  <view class="btn-area">
-    <navigator url="/pages/camera/camera">使用相机</navigator>
+      <view>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <view class="sign-in">
+        <button
+          type="primary"
+          size="default"
+          bind:tap="postData"
+          >
+          签到
+        </button>
+      </view>
+    </view>
   </view>
 </view>

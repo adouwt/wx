@@ -1,8 +1,8 @@
 /**index.wxss**/
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 80%;
+  margin: auto;
+  text-align: center;
 }
 
 .userinfo-avatar {
@@ -30,4 +30,10 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 20px;
+}
+
+.sign-in {
+  width: 60%;
+  margin:auto;
+  margin-top: 50px;
 }
