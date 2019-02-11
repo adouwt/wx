@@ -7,7 +7,7 @@
       <view>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </view>
-      <view class="sign-in">
+      <view class="sign-in" wx:if="{{!isSignIn}}">
         <button
           type="primary"
           size="default"
@@ -15,6 +15,18 @@
           >
           签到
         </button>
+      </view>
+      <view class="sign-in" wx:else>
+        <button
+          type="primary"
+          size="default"
+          disabled
+          >
+          已签到
+        </button>
+        <view class="sign-index">
+          当前签到名次：<text class="userinfo-nickname">{{currentIndex}}/{{allIndex}}</text>
+        </view>
       </view>
     </view>
   </view>

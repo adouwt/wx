@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/luckyDraw/luckyDraw",
     "pages/camera/camera"
   ],
   "window":{
@@ -17,8 +17,8 @@
         "text": "首页"
       }, 
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/luckyDraw/luckyDraw",
+        "text": "抽奖"
       },
       {
         "pagePath": "pages/camera/camera",

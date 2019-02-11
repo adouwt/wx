@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  抽奖
+  获取所有的用户头像
+数据库直接插入数据
+</view>

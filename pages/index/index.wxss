@@ -6,8 +6,8 @@
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 300rpx;
+  height: 300rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
@@ -36,4 +36,9 @@
   width: 60%;
   margin:auto;
   margin-top: 50px;
+}
+.sign-index {
+  margin-top: 30rpx;
+  font-size: 12px;
+  color: #ddd;
 }
