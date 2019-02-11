@@ -1,6 +1,10 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  抽奖
-  获取所有的用户头像
-数据库直接插入数据
+<view class="lucky-draw">
+  <view>
+    抽奖
+  </view>
+  <view wx:for="{{wxAllUser}}" wx:key="item._id" class="image">
+    <image  src="{{item.avatar_url}}" background-size="cover"></image>
+  </view>
+  <!-- 转圈，每个头像上有遮罩层，定时器显示，停止时候，清除定时器 -->
 </view>
