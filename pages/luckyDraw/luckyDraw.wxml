@@ -1,8 +1,5 @@
 <!--logs.wxml-->
 <view class="lucky-draw">
-  <view>
-    抽奖
-  </view>
   <view wx:for="{{wxAllUser}}" wx:key="item._id" class="image">
     <image  src="{{item.avatar_url}}" background-size="cover"></image>
   </view>

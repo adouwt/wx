@@ -6,23 +6,29 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#ddddde",
+    "navigationBarTitleText": "抽奖",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "images/tabBar/AI-gray.png",
+        "selectedIconPath": "images/tabBar/AI.png"
       }, 
       {
         "pagePath": "pages/luckyDraw/luckyDraw",
-        "text": "抽奖"
+        "text": "抽奖",
+        "iconPath": "images/tabBar/select-gray.png",
+        "selectedIconPath": "images/tabBar/select.png"
       },
       {
         "pagePath": "pages/camera/camera",
-        "text": "相机"
+        "text": "相机",
+        "iconPath": "images/tabBar/camera-gray.png",
+        "selectedIconPath": "images/tabBar/camera.png"
       }
   ]
   }
