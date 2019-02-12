@@ -4,7 +4,12 @@ const app = getApp();
 const network = require("../../utils/api.js");
 Page({
   data: {
-    wxAllUser: []
+    wxAllUser: [],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 10,
+    duration: 10,
+    swiperCurrent: 0
   },
   onLoad: function () {
     this.initData()
@@ -23,5 +28,31 @@ Page({
         title: '获取签到数据失败',
       })
     })
+  },
+  changeIndicatorDots(e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay(e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange(e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+  stop () {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+    console.log(this.data.swiperCurrent)
   }
 })
