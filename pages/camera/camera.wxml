@@ -2,5 +2,22 @@
   <view class="btn-area">
     <view bind:tap="chooseImage">找图片</view>
     <view bind:tap="scanCode">用相机</view>
+
+    <view wx:if="{{imgUrl}}">
+      <view>
+        <text>图片预览：</text>
+      </view>
+      <image src="{{imgUrl}}" />
+      <view>
+        <button
+          type="primary"
+          size="mini"
+          disabled="{{disabled}}"
+          bind:tap="upload"
+        >
+          上传
+        </button>
+      </view>
+    </view>
   </view>
 </view>

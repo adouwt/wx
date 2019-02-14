@@ -11,6 +11,7 @@
       interval="{{interval}}"
       duration="{{duration}}"
       current="{{swiperCurrent}}"
+      bindchange="swiperChange"
     >
       <block wx:for="{{wxAllUser}}" wx:key="item._id">
         <swiper-item >
@@ -25,8 +26,17 @@
         type="warn"
         size="default"
         bindtap="stop"
+        wx:if="{{autoplay}}"
       >
         停
+    </button>
+    <button
+        type="primary"
+        size="default"
+        bindtap="start"
+        wx:else
+      >
+        开始
     </button>
   </view>
 </view>
