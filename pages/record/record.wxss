@@ -1,0 +1,35 @@
+.lucky-draw-record-wrapper {
+    padding: 20px 0;
+}
+.lucky-draw-wrapper {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center; 
+}
+.lucky-draw-item {
+    display:flex;
+    flex: 1;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top: 15px;
+}
+.item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+.item-name {
+    font-size: 12px;
+}
+.item-index {
+    font-size: 12px;
+    color: #e70e0e;
+}
+.item-type {
+    font-size: 12px;
+    color: #f15213;
+}
+

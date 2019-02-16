@@ -5,14 +5,18 @@ const network = require("../../utils/api.js");
 Page({
   data: {
     wxAllUser: [],
+    luckyDraw: [],
     indicatorDots: false,
-    autoplay: true,
+    autoplay: false,
     interval: 10,
     duration: 10,
     swiperCurrent: 0,
     index: 0
   },
   onLoad: function () {
+    this.initData()
+  },
+  onShow: function () {
     this.initData()
   },
   initData: function(){
@@ -38,9 +42,11 @@ Page({
   stop () {
     this.setData({
       autoplay: false,
-      swiperCurrent: this.data.index
+      swiperCurrent: this.data.index,
     })
+    app.globalData.luckyDraw.push(this.data.wxAllUser[this.data.swiperCurrent])
     console.log(this.data.swiperCurrent) // 数组下标，抽奖抽到这位就从库里删除这个用户
+    console.log(app.globalData.luckyDraw)
   },
   start () {
     this.setData({

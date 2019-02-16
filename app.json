@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/luckyDraw/luckyDraw",
-    "pages/camera/camera"
+    "pages/camera/camera",
+    "pages/record/record"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -23,6 +24,12 @@
         "text": "抽奖",
         "iconPath": "images/tabBar/select-gray.png",
         "selectedIconPath": "images/tabBar/select.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "抽奖记录",
+        "iconPath": "images/tabBar/record-gray.png",
+        "selectedIconPath": "images/tabBar/record.png"
       },
       {
         "pagePath": "pages/camera/camera",

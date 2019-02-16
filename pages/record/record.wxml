@@ -1,0 +1,21 @@
+<!--logs.wxml-->
+<view class="lucky-draw-record">
+  <view class="lucky-draw-record-wrapper">
+    <view class="text-center">
+      抽奖记录
+    </view>
+    <view wx:if="{{luckyDraw.length>0}}" class="lucky-draw-wrapper">
+      <view wx:for="{{luckyDraw}}" wx:key="item._id" wx:for-item="item" class="lucky-draw-item">
+        <image src="{{item.avatar_url}}" class="item-image"/>
+        <text class="item-name">姓名：{{item.name}}</text>
+        <text class="item-index">获奖次序：{{index + 1}}</text>
+        <text class="item-type">获奖类型：{{'暂无'}}</text>
+      </view>
+    </view>
+    <view wx:else>
+      <view>
+        暂无抽奖记录
+      </view>
+    </view>
+  </view>
+</view>
