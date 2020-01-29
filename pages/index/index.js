@@ -53,6 +53,7 @@ Page({
           })
         }
       })
+      this.initData()
     }
   },
   getUserInfo: function(e) {
@@ -61,6 +62,7 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    console.log(22)
   },
   postData:function(){
     var _this = this
